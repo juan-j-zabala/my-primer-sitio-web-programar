@@ -2,7 +2,6 @@
 function iniciodeljuego () {
     mainsetion.innerHTML = h1 + h2
     
-    console.log(ataques.length)
     creandoelementohtml()
 }
 
@@ -18,9 +17,7 @@ function creandoelementohtml () {
         // console.log(piedra.id)
         inputpiedra = document.getElementById("ataque-piedra")
         inputpapel = document.getElementById("ataque-papel")
-        inputtijera = document.getElementById("ataque-tijera")
-        
-        // console.log(elecciones.ataque)
+        inputtijera = document.getElementById("ataque-tijera")   
     })
     botonselecionar.addEventListener("click",elegirunataque)
     
@@ -29,11 +26,13 @@ function creandoelementohtml () {
 function elegirunataque () { // funcion para que el jugador eliga ataque
     if (inputpiedra.checked) {
         elecionjugador.innerHTML = piedra.ataque
-        alert("problema")
+        resultadocombatejugador = piedra.ataque
     }else if (inputpapel.checked) {
         elecionjugador.innerHTML = papel.ataque
+        resultadocombatejugador = papel.ataque
     }else if (inputtijera.checked) {
         elecionjugador.innerHTML = tijera.ataque
+        resultadocombatejugador = tijera.ataque
     }else {
         alert("no haz elegido una mascota")
         return
@@ -44,7 +43,45 @@ function elegirunataque () { // funcion para que el jugador eliga ataque
 function elecionenemigo () {// funcion aleatoria de ataque del "enemigo-makina"
     let enemigomaquina = aleatorio(0,ataques.length -1)
     elecionenemi.innerHTML = ataques[enemigomaquina].ataque
-    console.log(ataques[enemigomaquina].ataque)
+    resultadocombateenemigo = ataques[enemigomaquina].ataque
+
+    resultadocombate()
+}
+
+function resultadocombate () {
+    if (resultadocombatejugador === resultadocombateenemigo) {
+        resultado_combate.innerHTML = puntuaciones.empate
+    }else if (resultadocombatejugador === piedra.ataque && resultadocombateenemigo === tijera.ataque 
+        || resultadocombatejugador === papel.ataque && resultadocombateenemigo === piedra.ataque 
+        || resultadocombatejugador === tijera.ataque && resultadocombateenemigo === papel.ataque) {
+            resultado_combate.innerHTML = puntuaciones.victoria
+            victoriasjuagador += 1
+            htmlvictoriasjugador.innerHTML = victoriasjuagador
+            htmlderrotasenemigo.innerHTML = victoriasjuagador
+        }else {
+        resultado_combate.innerHTML = puntuaciones.derrota
+        victoriasenemigo += 1
+        htmlvictoriasenemigo.innerHTML = victoriasenemigo
+        htmlderrotasjugador.innerHTML = victoriasenemigo
+    }
+    resultadofinal()
+}
+
+function resultadofinal () {
+    if (victoriasjuagador === 3 || victoriasenemigo === 3) {
+        botonselecionar.style.display = "none"
+        mainsetion.style.display = "none"
+        elecionjugador.style.display = "none"
+        elecionenemi.style.display = "none"
+        infohtmljugador.innerHTML = "JUGADOR"
+        infohtmlenemigo.innerHTML = "ENEMIGO"
+
+        if (victoriasjuagador > victoriasenemigo) {
+            resultado_final.innerHTML = puntuaciones.ganaste
+        }else if (victoriasjuagador < victoriasenemigo) {
+            resultado_final.innerHTML = puntuaciones.perdiste
+        }
+    }
 }
 
 function aleatorio(min,max){// funtion para generar nuemero aleatorios

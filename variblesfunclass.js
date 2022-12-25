@@ -3,6 +3,15 @@ const mainsetion = document.getElementById("main-section")
 const elecionjugador = document.getElementById("ataqueelegido-jugador")
 const elecionenemi = document.getElementById("ataqueelegido-enemigo")
 const botonselecionar = document.getElementById("selecionar-ataque")
+const resultado_combate = document.getElementById("resultado-combate")
+const htmlvictoriasjugador = document.getElementById("victorias-jugador")
+const htmlderrotasjugador = document.getElementById("derrotas-jugador")
+const htmlvictoriasenemigo = document.getElementById("victorias-enemigo")
+const htmlderrotasenemigo = document.getElementById("derrotas-enemigo")
+const resultado_final = document.getElementById("resultado-final")
+const infohtmljugador = document.getElementById("infotextojugador")
+const infohtmlenemigo = document.getElementById("infotextoenemigo")
+
 
 // creating variable
 let h1 = `<h1>PIEDRA PAPEL O TIJERA</h1>`
@@ -12,16 +21,25 @@ let ataques = []
 let inputpiedra
 let inputpapel
 let inputtijera
+let resultadocombatejugador
+let resultadocombateenemigo
+let victoriasjuagador = 0
+let victoriasenemigo = 0
 
 // creating classes
-class Elementos {
-    constructor(buttom) {
-        this.buttom = buttom
-    }
-    aleatorio(min,max){// metodo que para nuemeros aleatorios
-        return Math.floor(Math.random()*(max-min+1)+min)
+class Puntuaciones {
+    constructor() {
+        // datos para resultado combate
+        this.derrota = "HAZ SIDO DERROTA!!😭",
+        this.victoria = "TIENES LA VICTORIA!!😎",
+        this.empate = "EMPATASTE 😐",
+        //datos para resultado final
+        this.ganaste = "GANASTE!!",
+        this.perdiste = "PERDISTE"
     }
 }
+
+let puntuaciones = new Puntuaciones
 
 class Ataque {
     constructor (ataque, id) {
@@ -35,25 +53,7 @@ let piedra = new Ataque("PIEDRA", "ataque-piedra")
 let papel = new Ataque("PAPEL", "ataque-papel")
 let tijera = new Ataque("TIJERA", "ataque-tijera")
 
-piedra.vida.push(
-    {cantida: "5"},
-    {cantida: "3"},
-    {cantida: "2"},
-)
-
-papel.vida.push(
-    {cantida: "5"},
-    {cantida: "3"},
-    {cantida: "6"},
-)
-
-tijera.vida.push(
-    {cantida: "7"},
-    {cantida: "3"},
-    {cantida: "2"},
-)
-
 ataques.push(piedra,papel,tijera)
-console.log(ataques[2].ataque)
+
 
 
