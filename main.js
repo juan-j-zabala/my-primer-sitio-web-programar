@@ -1,8 +1,11 @@
 // creacion y uso de funcion-flujo del juego
 function iniciodeljuego () {
     mainsetion.innerHTML = h1 + h2
+    botonreinciar.style.display = "none"
+    resultado_final.style.display = "none"
     
     creandoelementohtml()
+
 }
 
 function creandoelementohtml () {
@@ -75,6 +78,7 @@ function resultadofinal () {
         elecionenemi.style.display = "none"
         infohtmljugador.innerHTML = "JUGADOR"
         infohtmlenemigo.innerHTML = "ENEMIGO"
+        resultado_final.style.display = "block"
 
         if (victoriasjuagador > victoriasenemigo) {
             resultado_final.innerHTML = puntuaciones.ganaste
@@ -82,6 +86,12 @@ function resultadofinal () {
             resultado_final.innerHTML = puntuaciones.perdiste
         }
     }
+    botonreinciar.style.display = "block"
+    botonreinciar.addEventListener("click",reiniciarjuego)
+}
+
+function reiniciarjuego () {
+    location.reload()
 }
 
 function aleatorio(min,max){// funtion para generar nuemero aleatorios

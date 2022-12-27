@@ -11,6 +11,7 @@ const htmlderrotasenemigo = document.getElementById("derrotas-enemigo")
 const resultado_final = document.getElementById("resultado-final")
 const infohtmljugador = document.getElementById("infotextojugador")
 const infohtmlenemigo = document.getElementById("infotextoenemigo")
+const botonreinciar = document.getElementById("reiniciar")
 
 
 // creating variable
