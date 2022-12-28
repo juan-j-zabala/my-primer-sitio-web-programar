@@ -5,7 +5,7 @@ function iniciodeljuego () {
     resultado_final.style.display = "none"
     
     creandoelementohtml()
-
+    
 }
 
 function creandoelementohtml () {
@@ -82,11 +82,12 @@ function resultadofinal () {
 
         if (victoriasjuagador > victoriasenemigo) {
             resultado_final.innerHTML = puntuaciones.ganaste
+            botonreinciar.style.display = "block"
         }else if (victoriasjuagador < victoriasenemigo) {
             resultado_final.innerHTML = puntuaciones.perdiste
+            botonreinciar.style.display = "block"
         }
     }
-    botonreinciar.style.display = "block"
     botonreinciar.addEventListener("click",reiniciarjuego)
 }
 
