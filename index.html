@@ -5,10 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <section id="main-section">
-        <!-- titulo y botones generados con javascript -->
+        <h1>PIEDRA PAPEL O TIJERA</h1>
+        <h2>ELIGE TU ATAQUE</h2>
+        <input type="radio" name="eleccion" id="ataque-piedra">
+        <label class="boton-piedra-ataques" for="ataque-piedra">
+            <p>PIEDRA</p>
+        </label><input type="radio" name="eleccion" id="ataque-papel">
+        <label class="boton-papel-ataques" for="ataque-papel">
+            <p>PAPEL</p>
+        </label><input type="radio" name="eleccion" id="ataque-tijera">
+        <label class="boton-tijera-ataques" for="ataque-tijera">
+            <p>TIJERA</p>
+        </label>
     </section>
     <button id="selecionar-ataque">SELECIONAR</button>
     <section class="puntuacion">
@@ -31,7 +43,6 @@
             <button id="reiniciar">REINICIAR</button>
         </div>
     </section>
-
     <script src="/variblesfunclass.js"></script>
     <script src="/main.js"></script>
 </body>

@@ -1,0 +1,19 @@
+body {
+    background-color: #1A120B;
+    color: #E5E5CB;
+}
+
+button {
+    background-color: red;
+    border-radius: 5px;
+    border: solid 3px black;
+}
+
+#ataque-piedra {
+    background-color: #60DB23;
+    border-radius: 5px;
+}
+
+.boton-tijera-ataques {
+    background-color: #60DB23;
+}

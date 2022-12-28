@@ -13,15 +13,12 @@ const infohtmljugador = document.getElementById("infotextojugador")
 const infohtmlenemigo = document.getElementById("infotextoenemigo")
 const botonreinciar = document.getElementById("reiniciar")
 
-
 // creating variable
-let h1 = `<h1>PIEDRA PAPEL O TIJERA</h1>`
-let h2 = `<h2>ELIGE TU ATAQUE</h2>`
+let inputpapel = document.getElementById("ataque-papel")
+let inputtijera = document.getElementById("ataque-tijera")   
+let inputpiedra = document.getElementById("ataque-piedra")
 let buttom
 let ataques = []
-let inputpiedra
-let inputpapel
-let inputtijera
 let resultadocombatejugador
 let resultadocombateenemigo
 let victoriasjuagador = 0

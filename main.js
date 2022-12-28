@@ -1,29 +1,9 @@
 // creacion y uso de funcion-flujo del juego
 function iniciodeljuego () {
-    mainsetion.innerHTML = h1 + h2
     botonreinciar.style.display = "none"
     resultado_final.style.display = "none"
     
-    creandoelementohtml()
-    
-}
-
-function creandoelementohtml () {
-    ataques.forEach((elecciones) => {
-        buttom = `
-        <input type="radio" name="eleccion" id=${elecciones.id}>
-        <label class="boton-seleccion-ataques" for=${elecciones.id}>
-            <p>${elecciones.ataque}</p>
-        </label>
-        `
-        mainsetion.innerHTML += buttom
-        // console.log(piedra.id)
-        inputpiedra = document.getElementById("ataque-piedra")
-        inputpapel = document.getElementById("ataque-papel")
-        inputtijera = document.getElementById("ataque-tijera")   
-    })
     botonselecionar.addEventListener("click",elegirunataque)
-    
 }
 
 function elegirunataque () { // funcion para que el jugador eliga ataque
