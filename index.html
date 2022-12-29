@@ -8,21 +8,25 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+    <section class="titulo">
+        <h1>PIEDRA <br> PAPEL <br> O <br> TIJERA</h1>
+        <h2>ELIGE TU <br> ATAQUE</h2>
+    </section>
     <section id="main-section">
-        <h1>PIEDRA PAPEL O TIJERA</h1>
-        <h2>ELIGE TU ATAQUE</h2>
         <input type="radio" name="eleccion" id="ataque-piedra">
         <label class="boton-piedra-ataques" for="ataque-piedra">
-            <p>PIEDRA</p>
-        </label><input type="radio" name="eleccion" id="ataque-papel">
-        <label class="boton-papel-ataques" for="ataque-papel">
-            <p>PAPEL</p>
-        </label><input type="radio" name="eleccion" id="ataque-tijera">
-        <label class="boton-tijera-ataques" for="ataque-tijera">
-            <p>TIJERA</p>
+            <p class="texto-ataque">PIEDRA</p>
         </label>
+        <input type="radio" name="eleccion" id="ataque-papel">
+        <label class="boton-papel-ataques" for="ataque-papel">
+            <p class="texto-ataque">PAPEL</p>
+        </label>
+        <input type="radio" name="eleccion" id="ataque-tijera">
+        <label class="boton-tijera-ataques" for="ataque-tijera">
+            <p class="texto-ataque">TIJERA</p>
+        </label>
+        <button id="selecionar-ataque">SELECIONAR</button>
     </section>
-    <button id="selecionar-ataque">SELECIONAR</button>
     <section class="puntuacion">
         <h2>PUNTUACION</h2>
         <div class="puntucion-jugador">
@@ -37,12 +41,12 @@
             TIENE <span id="victorias-enemigo">0</span> VICTORIAS<br>
             Y <span id="derrotas-enemigo">0</span> DERROTAS
         </div>
-        <div>
-            <p id="resultado-combate">RESULTADO COMBATE</p>
-            <p id="resultado-final">RESULTADO FINAL</p>
-            <button id="reiniciar">REINICIAR</button>
-        </div>
     </section>
+        <div class="resultados">
+            <p class="resultadoss-finales" id="resultado-combate">RESULTADO COMBATE</p>
+            <p class="resultadoss-finales" id="resultado-final">RESULTADO FINAL</p>
+            <button class="resultadoss-finales" id="reiniciar">REINICIAR</button>
+        </div>
     <script src="/variblesfunclass.js"></script>
     <script src="/main.js"></script>
 </body>

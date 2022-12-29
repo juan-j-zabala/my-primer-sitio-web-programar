@@ -58,14 +58,14 @@ function resultadofinal () {
         elecionenemi.style.display = "none"
         infohtmljugador.innerHTML = "JUGADOR"
         infohtmlenemigo.innerHTML = "ENEMIGO"
-        resultado_final.style.display = "block"
+        resultado_final.style.display = "flex"
 
         if (victoriasjuagador > victoriasenemigo) {
             resultado_final.innerHTML = puntuaciones.ganaste
-            botonreinciar.style.display = "block"
+            botonreinciar.style.display = "flex"
         }else if (victoriasjuagador < victoriasenemigo) {
             resultado_final.innerHTML = puntuaciones.perdiste
-            botonreinciar.style.display = "block"
+            botonreinciar.style.display = "flex"
         }
     }
     botonreinciar.addEventListener("click",reiniciarjuego)
